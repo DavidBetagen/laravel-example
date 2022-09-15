@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::get('/send-mail', [MailController::class, 'index'])->name("send-mail");
 Route::post('/send-mail', [MailController::class, 'sendMail']);
+Route::get('/livewire', [LiveWireController::class, 'index']);

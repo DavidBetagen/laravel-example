@@ -39,6 +39,16 @@
                         </div>
                     </a>
                 </div>
+                <div class="col-sm-3">
+                    <a href="/livewire" class="text-decoration-none">
+                        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                            <div class="card-body text-center" style="height: 140px;">
+                                <i class="fa fa-envelope-o mt-4" style="font-size:24px"></i><br>
+                                <h5 class="card-title mt-2">Livewire</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
            </div>
         </div>
        
