@@ -17,9 +17,9 @@ class StudentSeeder extends Seeder
     public function run()
     {
         DB::table('students')->insert([
-            ['name' => "John doe"],
-            ['name' => "Pual Nano"],
-            ['name' => "David Rean"]
+            ['name' => "John doe", 'status' => 'HIGHTSCHOOL'],
+            ['name' => "Pual Nano", 'status' => 'COLLEGE'],
+            ['name' => "David Rean", 'status' => 'UNIVERSITY']
         ]);
     }
 }

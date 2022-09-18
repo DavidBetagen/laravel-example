@@ -15,7 +15,10 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
+            $table->string('name');
+            $table->enum('status', ['HIGHTSCHOOL', 'COLLEGE', 'UNIVERSITY']);
+            // ->default('DRAFT')
+            // ->index();
             $table->timestamps();
         });
     }

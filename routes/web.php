@@ -15,9 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/{any}', function () {
     return view('index');
-});
+})->where('any', '.*');
+
+// Route::get('/{pathMatch}', function (){
+//     return view('welcome');
+// })->where('pathMatch', ".*");
+
+
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::get('/send-mail', [MailController::class, 'index'])->name("send-mail");
 Route::post('/send-mail', [MailController::class, 'sendMail']);
