@@ -15,19 +15,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
-    return view('index');
-})->where('any', '.*');
+// Route::get('/{any}', function () {
+//     return view('index');
+// })->where('any', '.*');
 
 // Route::get('/{pathMatch}', function (){
 //     return view('welcome');
 // })->where('pathMatch', ".*");
 
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/', function () {
+    return view('index');
+});
 
 Route::get('/send-mail', [MailController::class, 'index'])->name("send-mail");
 Route::post('/send-mail', [MailController::class, 'sendMail']);
+
 Route::get('/livewire', [LiveWireController::class, 'index']);
+
+Route::get('/amazon-s3', [ImageController::class, 'amazonS3']);
+Route::post('/amazon-s3', [ImageController::class, 'storeS3']);
+Route::get('/amazon-s3/{image}', [ImageController::class, 'showImageS3']);
