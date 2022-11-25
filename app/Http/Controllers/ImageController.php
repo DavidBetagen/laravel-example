@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Image;
+use App\Models\Student;
 use Storage;
+use Carbon\Carbon;
 
 class ImageController extends Controller
 {
@@ -26,5 +28,38 @@ class ImageController extends Controller
 
     function showImageS3(Image $image){
         return view('amazon_s3_show', ['image' => $image]);
+    }
+
+    public function media(){
+        return view('media.index');
+    }
+
+    
+    public function storeMedia(Request $request){
+        $student = new Student;
+        $student->name = 'Dep';
+        $student->status = 'COLLEGE';
+        $student->save();
+
+        $student->addMedia($request->image)
+                ->toMediaCollection();
+
+        return $student;
+    }
+
+    public function showMedia(Student $model)
+    {
+        dd(
+            $model->getMedia(),
+            $model->getMedia()[0]->getUrl(),
+            $model->getMedia()[0]->getFullUrl(),
+            $model->getMedia()[0]->getPath(),
+
+            $model->getMedia()[0]->size,
+            $model->getMedia()[0]->human_readable_size,
+
+            $model->getFirstMedia(),
+            $model->getFirstMediaUrl(),
+        );
     }
 }

@@ -36,3 +36,7 @@ Route::get('/livewire', [LiveWireController::class, 'index']);
 Route::get('/amazon-s3', [ImageController::class, 'amazonS3']);
 Route::post('/amazon-s3', [ImageController::class, 'storeS3']);
 Route::get('/amazon-s3/{image}', [ImageController::class, 'showImageS3']);
+
+Route::get('/media-upload', [ImageController::class, 'media']);
+Route::post('/media-upload', [ImageController::class, 'storeMedia']);
+Route::get('/media-upload/{model}', [ImageController::class, 'showMedia']);
