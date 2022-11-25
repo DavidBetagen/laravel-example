@@ -25,6 +25,6 @@ class ImageController extends Controller
     }
 
     function showImageS3(Image $image){
-        return Storage::disk('s3')->response("images/{$image->filename}");
+        return view('amazon_s3_show', ['image' => $image]);
     }
 }
