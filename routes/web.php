@@ -28,6 +28,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Send mail with queues jobs
 Route::get('/send-mail', [MailController::class, 'index'])->name("send-mail");
 Route::post('/send-mail', [MailController::class, 'sendMail']);
 
